@@ -1,4 +1,4 @@
-import { AppLayout } from './AppLayout';
+import { AppLayout } from './layout';
 import { ThemeProvider } from './providers';
 import { Routes } from './routes';
 
