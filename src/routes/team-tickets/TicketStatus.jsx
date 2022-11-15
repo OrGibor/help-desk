@@ -9,15 +9,16 @@ const status = [
 const getCurrentStatus = (statusId) => status.find(({ id }) => id === statusId);
 
 export default function TicketStatus({ statusId }) {
+  const { title, color } = getCurrentStatus(statusId);
   return (
-    <Tooltip title={getCurrentStatus(statusId).title} placement="left">
+    <Tooltip title={title} placement="left">
       <Box
         style={{
           display: "flex",
           margin: "12px",
           width: "13px",
           height: "13px",
-          backgroundColor: getCurrentStatus(statusId).color,
+          backgroundColor: color,
           borderRadius: "50%",
         }}
       />

@@ -38,15 +38,8 @@ const ticketList = [
 export default function TicketsList() {
   return (
     <div style={{ width: "700px" }}>
-      {ticketList.map(({ id, urgency, status, title, subtitle, dateTime }) => (
-        <Ticket
-          key={id}
-          urgency={urgency}
-          status={status}
-          title={title}
-          subtitle={subtitle}
-          dateTime={dateTime}
-        />
+      {ticketList.map(({ id, ...ticket }) => (
+        <Ticket key={id} {...ticket} />
       ))}
     </div>
   );

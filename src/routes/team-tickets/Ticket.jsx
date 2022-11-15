@@ -5,7 +5,7 @@ import TicketStatus from "./TicketStatus";
 import SelectTroubleshooter from "./SelectTroubleshooter";
 import TicketRating from "./TicketRating";
 
-export default function Ticket(props) {
+export default function Ticket({ title, status, dateTime, subtitle, urgency }) {
   const [troubleshooter, setTroubleshooter] = useState(1);
 
   return (
@@ -23,9 +23,9 @@ export default function Ticket(props) {
         <Grid item xs={8}>
           <Box display="flex" flexDirection="row">
             <Typography variant="h5" component="div">
-              {props.title}
+              {title}
             </Typography>
-            <TicketStatus statusId={props.status} />
+            <TicketStatus statusId={status} />
           </Box>
         </Grid>
         <Grid item xs={4} sx={{ textAlign: "center" }}>
@@ -36,7 +36,7 @@ export default function Ticket(props) {
               fontWeight: 540,
             }}
           >
-            {props.dateTime}
+            {dateTime}
           </Typography>
         </Grid>
       </Grid>
@@ -45,7 +45,7 @@ export default function Ticket(props) {
         color="text.secondary"
         gutterBottom
       >
-        {props.subtitle}
+        {subtitle}
       </Typography>
       <CardActions>
         <Grid
@@ -53,7 +53,7 @@ export default function Ticket(props) {
           sx={{ alignItems: "center", margin: "0.5rem 1rem 0 0.2rem" }}
         >
           <Grid item xs={8}>
-            <TicketRating urgency={props.urgency} />
+            <TicketRating urgency={urgency} />
           </Grid>
           <Grid item xs={4} sx={{ textAlign: "center" }}>
             <SelectTroubleshooter

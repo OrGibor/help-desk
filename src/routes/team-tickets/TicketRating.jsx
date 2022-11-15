@@ -1,13 +1,15 @@
 import { Rating } from "@mui/material";
 
-export default function TicketRating(props) {
+const SAD_ICON = "😰";
+
+export default function TicketRating({ urgency }) {
   return (
     <Rating
-      value={props.urgency}
+      value={urgency}
       precision={0.5}
       readOnly
-      icon="😰"
-      emptyIcon="😰"
+      icon={SAD_ICON}
+      emptyIcon={SAD_ICON}
     />
   );
 }
