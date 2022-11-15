@@ -1,5 +1,9 @@
+import TicketsList from "./TicketsList";
+
 export const TeamTicketsPage = () => {
   return (
-    <div>Team Tickets Page</div>
-  )
-}
+    <div>
+      <TicketsList />
+    </div>
+  );
+};
