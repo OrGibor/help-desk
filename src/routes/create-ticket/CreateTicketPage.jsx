@@ -1,5 +1,11 @@
+import * as React from 'react';
+import NewCommentBox from './Components/NewCommentBox';
+
 export const CreateTicketPage = () => {
   return (
-    <div>Create Ticket Page</div>
+    <div>
+      <NewCommentBox />
+    </div>
+    
   )
 }
