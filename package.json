@@ -7,11 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-<<<<<<< HEAD
     "start": "vite"
-=======
-    "start": "node App.jsx"
->>>>>>> 6fdb42c0dd9bbeabf9c7118c6a65fe8b9d342947
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
