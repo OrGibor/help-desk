@@ -1,14 +1,15 @@
-FROM node:15.12.0
+#Build Steps
+FROM node:alpine3.10 as build-step
 
+RUN mkdir /app
 WORKDIR /app
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-ADD . .
-
+COPY package.json /app
 RUN npm install
+COPY . /app
 
-ENTRYPOINT ["/entrypoint.sh"]
+RUN npm run build
 
-CMD ["npm", "run", "dev"]
+#Run Steps
+FROM nginx:1.19.8-alpine  
+COPY --from=build-step /app/build /usr/share/nginx/html
