@@ -74,7 +74,7 @@ export const TeamTicketsPage = () => {
 
   return (
     <div>
-      <Typography variant="h4" component="div" sx={{ margin: "1rem" }}></Typography>
+      <Typography variant="h4" component="div" sx={{ margin: "1rem" }}>
         הפניות של צוות משוב
       </Typography>
       <Box sx={{ margin: "1.5rem" }}>
