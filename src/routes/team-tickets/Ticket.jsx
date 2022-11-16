@@ -14,6 +14,7 @@ const Ticket = ({ title, status, dateTime, subtitle, urgency }) => {
         backgroundColor: "LightGray",
         borderRadius: "10px",
         margin: "15px",
+        minHeight: 150,
       }}
     >
       <Grid

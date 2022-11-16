@@ -1,6 +1,7 @@
 import TicketsList from "./TicketsList";
 import TicketsTabs from "./TicketsTabs";
 import SearchBar from "./SearchBar";
+import LastActivity from "./LastActivity";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -73,19 +74,25 @@ export const TeamTicketsPage = () => {
       );
 
   return (
-    <div>
-      <Typography variant="h4" component="div" sx={{ margin: "1rem" }}>
-        הפניות של צוות משוב
-      </Typography>
-      <Box sx={{ margin: "1.5rem" }}>
-        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+    <Box display="flex" flex={1}>
+      <Box display="flex" flexDirection="column" flex={1}>
+        <Typography variant="h3" component="div" sx={{ margin: "1rem" }}>
+          הפניות של צוות משוב
+        </Typography>
+        <Box sx={{ margin: "1.5rem" }}>
+          <SearchBar
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </Box>
+        <TicketsTabs
+          tabs={filterStates}
+          currentStateIndex={currentStateIndex}
+          setCurrentStateIndex={setCurrentStateIndex}
+        />
+        <TicketsList ticketList={currentState.filterFunction(filterdList)} />
       </Box>
-      <TicketsTabs
-        tabs={filterStates}
-        currentStateIndex={currentStateIndex}
-        setCurrentStateIndex={setCurrentStateIndex}
-      />
-      <TicketsList ticketList={currentState.filterFunction(filterdList)} />
-    </div>
+      <LastActivity width={425} />
+    </Box>
   );
 };

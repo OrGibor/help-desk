@@ -1,12 +1,13 @@
+import { Box } from "@mui/material";
 import Ticket from "./Ticket";
 
 const TicketsList = ({ ticketList }) => {
   return (
-    <div style={{ width: "550px" }}>
+    <Box display="flex" flexDirection="column" overflow="auto">
       {ticketList.map(({ id, ...ticket }) => (
         <Ticket key={id} {...ticket} />
       ))}
-    </div>
+    </Box>
   );
 };
 
