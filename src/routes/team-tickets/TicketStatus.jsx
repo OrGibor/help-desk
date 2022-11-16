@@ -8,8 +8,9 @@ const status = [
 
 const getCurrentStatus = (statusId) => status.find(({ id }) => id === statusId);
 
-export default function TicketStatus({ statusId }) {
+const TicketStatus = ({ statusId }) => {
   const { title, color } = getCurrentStatus(statusId);
+
   return (
     <Tooltip title={title} placement="left">
       <Box
@@ -24,4 +25,6 @@ export default function TicketStatus({ statusId }) {
       />
     </Tooltip>
   );
-}
+};
+
+export default TicketStatus;

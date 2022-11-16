@@ -1,46 +1,14 @@
+import { Box } from "@mui/material";
 import Ticket from "./Ticket";
 
-const ticketList = [
-  {
-    id: 1,
-    urgency: 3,
-    status: "pending",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-  {
-    id: 2,
-    urgency: 2.5,
-    status: "progress",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-  {
-    id: 3,
-    urgency: 2,
-    status: "done",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-  {
-    id: 4,
-    urgency: 4.5,
-    status: "progress",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-];
-
-export default function TicketsList() {
+const TicketsList = ({ ticketList }) => {
   return (
-    <div style={{ width: "700px" }}>
+    <Box display="flex" flexDirection="column" overflow="auto">
       {ticketList.map(({ id, ...ticket }) => (
         <Ticket key={id} {...ticket} />
       ))}
-    </div>
+    </Box>
   );
-}
+};
+
+export default TicketsList;

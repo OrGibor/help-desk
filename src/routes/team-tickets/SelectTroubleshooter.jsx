@@ -8,11 +8,10 @@ const availableTroubleshooters = [
 
 export default function SelectTroubleshooter(props) {
   return (
-    <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">מטפל</InputLabel>
+    <FormControl>
+      <InputLabel>מטפל</InputLabel>
       <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
+        sx={{ width: "10rem", hight: "3rem" }}
         value={props.troubleshooter}
         label="מטפל"
         onChange={(event) => props.setTroubleshooter(event.target.value)}
