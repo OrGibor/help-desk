@@ -4,7 +4,6 @@ const LastActivity = ({ width }) => {
   return (
     <Card
       sx={{
-        backgroundColor: "LightGray",
         borderRadius: "10px",
         margin: "15px",
         width,

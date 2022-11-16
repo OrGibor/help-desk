@@ -1,44 +1,9 @@
-import TicketsList from "./TicketsList";
-import TicketsTabs from "./TicketsTabs";
-import SearchBar from "./SearchBar";
-import LastActivity from "./LastActivity";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-
-const ticketList = [
-  {
-    id: 1,
-    urgency: 3,
-    status: "pending",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-  {
-    id: 2,
-    urgency: 2.5,
-    status: "progress",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-  {
-    id: 3,
-    urgency: 2,
-    status: "done",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-  {
-    id: 4,
-    urgency: 4.5,
-    status: "progress",
-    title: "לא עובד לי האווטלוק",
-    subtitle: "לא מקבל אימילים",
-    dateTime: "11.11.2011 15:11",
-  },
-];
+import { useTickets } from '../../contexts';
+import SearchBar from "./SearchBar";
+import TicketsList from "./TicketsList";
+import TicketsTabs from "./TicketsTabs";
 
 const filterStates = [
   {
@@ -61,14 +26,15 @@ const filterStates = [
 ];
 
 export const TeamTicketsPage = () => {
+  const {tickets} = useTickets();
   const [currentStateIndex, setCurrentStateIndex] = useState(0);
   const [searchValue, setSearchValue] = useState("");
 
   const currentState = filterStates[currentStateIndex];
 
   const filterdList = !searchValue
-    ? ticketList
-    : ticketList.filter(
+    ? tickets
+    : tickets.filter(
         ({ title, subtitle }) =>
           title.includes(searchValue) || subtitle.includes(searchValue)
       );
@@ -76,10 +42,10 @@ export const TeamTicketsPage = () => {
   return (
     <Box display="flex" flex={1}>
       <Box display="flex" flexDirection="column" flex={1}>
-        <Typography variant="h3" component="div" sx={{ margin: "1rem" }}>
+        <Typography variant="h3" component="div" sx={{ mt: 2, mx: 2 }}>
           הפניות של צוות משוב
         </Typography>
-        <Box sx={{ margin: "1.5rem" }}>
+        <Box sx={{ m: 2 }}>
           <SearchBar
             searchValue={searchValue}
             setSearchValue={setSearchValue}
@@ -92,7 +58,7 @@ export const TeamTicketsPage = () => {
         />
         <TicketsList ticketList={currentState.filterFunction(filterdList)} />
       </Box>
-      <LastActivity width={425} />
+      {/* <LastActivity width="40%" /> */}
     </Box>
   );
 };

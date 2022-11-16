@@ -1,4 +1,4 @@
-import { MenuItem, FormControl, Select, InputLabel } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const availableTroubleshooters = [
   { id: 1, name: "דורי להב" },
@@ -15,6 +15,7 @@ export default function SelectTroubleshooter(props) {
         value={props.troubleshooter}
         label="מטפל"
         onChange={(event) => props.setTroubleshooter(event.target.value)}
+        onClick={e => e.stopPropagation()}
       >
         {availableTroubleshooters.map(({ id, name }) => (
           <MenuItem value={id} key={id}>

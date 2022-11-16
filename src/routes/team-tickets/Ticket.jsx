@@ -1,27 +1,23 @@
+import {
+  Box, Card, CardActions, CardHeader, Typography
+} from "@mui/material";
 import * as React from "react";
 import { useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardActions,
-  Typography,
-  Grid,
-  Box,
-} from "@mui/material";
-import TicketStatus from "./TicketStatus";
+import { TicketRating } from "../../components";
 import SelectTroubleshooter from "./SelectTroubleshooter";
-import TicketRating from "./TicketRating";
+import TicketStatus from "./TicketStatus";
 
-const Ticket = ({ title, status, dateTime, subtitle, urgency }) => {
+const Ticket = ({ title, status, dateTime, subtitle, urgency, onTicketClick }) => {
   const [troubleshooter, setTroubleshooter] = useState(1);
 
   return (
     <Card
+      onClick={onTicketClick}
       sx={{
         backgroundColor: "LightGray",
         borderRadius: "10px",
-        margin: "15px",
-        minHeight: 150,
+        m: 2,
+        cursor: 'pointer'
       }}
     >
       <CardHeader
@@ -51,7 +47,7 @@ const Ticket = ({ title, status, dateTime, subtitle, urgency }) => {
         subheader={<Typography variant="subtitle1">{subtitle}</Typography>}
         disableTypography
       />
-      <CardActions>
+      <CardActions sx={{pb: 2}}>
         <Box
           width="100%"
           display="flex"

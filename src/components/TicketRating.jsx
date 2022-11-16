@@ -2,7 +2,7 @@ import { Rating } from "@mui/material";
 
 const SAD_ICON = "😰";
 
-const TicketRating = ({ urgency }) => {
+export const TicketRating = ({ urgency }) => {
   return (
     <Rating
       sx={{ fontSize: "1.4rem" }}
@@ -14,5 +14,3 @@ const TicketRating = ({ urgency }) => {
     />
   );
 };
-
-export default TicketRating;
