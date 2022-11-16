@@ -1,20 +1,26 @@
+import { Box, Card, CardActions, Grid, Typography } from "@mui/material";
 import * as React from "react";
 import { useState } from "react";
-import { Card, CardActions, Typography, Grid, Box } from "@mui/material";
-import TicketStatus from "./TicketStatus";
 import SelectTroubleshooter from "./SelectTroubleshooter";
 import TicketRating from "./TicketRating";
+import TicketStatus from "./TicketStatus";
 
-export default function Ticket({ title, status, dateTime, subtitle, urgency }) {
+export default function Ticket({ title, status, dateTime, subtitle, urgency, onClick }) {
+  const [isHovering, setIsHovering] = useState(false);
   const [troubleshooter, setTroubleshooter] = useState(1);
 
   return (
     <Card
+      elevation={isHovering ? 4 : 1}
       sx={{
-        backgroundColor: "LightGray",
         borderRadius: "10px",
         margin: "15px",
+        cursor: 'pointer',
+        backgroundColor: 'action.hover'
       }}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      onClick={onClick}
     >
       <Grid
         container
