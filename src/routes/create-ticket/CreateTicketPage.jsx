@@ -1,5 +1,8 @@
+import * as React from 'react';
+import { NewCommentCard } from './Components/NewCommentCard';
+
 export const CreateTicketPage = () => {
   return (
-    <div>Create Ticket Page</div>
+    <NewCommentCard />
   )
 }
