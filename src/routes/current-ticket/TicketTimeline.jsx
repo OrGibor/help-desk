@@ -31,7 +31,9 @@ export const TicketTimeline = () => {
           <Step key={index} active>
             <StepLabel>
             <Typography variant='subtitle2'>{event.date}</Typography>
-              {event.type === 'update' ? <Typography sx={eventStyles}>{event.label}</Typography>: <CommentBody author={event.author} content={event.content}/>}
+              {event.type === 'update' ? <Typography sx={eventStyles} dangerouslySetInnerHTML={{
+                __html: event.label.replace(/\*(.+)\*/, '<b>$1</b>')
+              }}/>: <CommentBody author={event.author} content={event.content}/>}
             </StepLabel>
           </Step>
         ))}

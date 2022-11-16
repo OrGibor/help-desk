@@ -1,8 +1,6 @@
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import createTicket from './create-ticket';
 import currentTicket from './current-ticket';
-import myTickets from './my-tickets';
 import teamTickets from './team-tickets';
 
 const defaultRoute = {
@@ -11,5 +9,5 @@ const defaultRoute = {
 }
 
 export const Routes = () => {
-  return useRoutes([createTicket, myTickets, teamTickets, currentTicket, defaultRoute]);
+  return useRoutes([teamTickets, currentTicket, defaultRoute]);
 }

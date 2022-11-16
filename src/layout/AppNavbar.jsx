@@ -2,7 +2,6 @@ import { Box, Divider, Paper, styled, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 const pathList = [
-  { displayTitle: "פתיחת פניה", path: "/create-ticket" },
   { displayTitle: "טיפול בפניה", path: "/current-ticket" },
   { displayTitle: "הפניות של צוות משוב", path: "/team-tickets" },
 ];

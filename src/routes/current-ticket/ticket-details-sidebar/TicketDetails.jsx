@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import { TicketRating } from '../../../components';
 
 import { DetailTitle } from './DetailTitle';
 import { ShortDetail } from './ShortDetail';
@@ -15,7 +16,7 @@ export const TicketDetails = ({ticket}) => (
     </Box>
     <Box>
       <DetailTitle>כמה התקלה משביתה?</DetailTitle>
-      <Box sx={{height: 50, backgroundColor: 'gray'}}></Box>
+      <TicketRating urgency={5}/>
     </Box>
     <Box display="flex" justifyContent="space-around">
       <ShortDetail>

@@ -1,6 +1,6 @@
+import LensIcon from '@mui/icons-material/Lens';
+import OutlinedLensIcon from '@mui/icons-material/LensOutlined';
 import { Rating } from "@mui/material";
-
-const SAD_ICON = "😰";
 
 export const TicketRating = ({ urgency }) => {
   return (
@@ -9,8 +9,8 @@ export const TicketRating = ({ urgency }) => {
       value={urgency}
       precision={0.5}
       readOnly
-      icon={SAD_ICON}
-      emptyIcon={SAD_ICON}
+      icon={<LensIcon color="error"/>}
+      emptyIcon={<OutlinedLensIcon/>}
     />
   );
 };

@@ -8,22 +8,30 @@ import { TicketTimeline } from './TicketTimeline';
 const image = 'https://static.remove.bg/remove-bg-web/221525818b4ba04e9088d39cdcbd0c7bcdfb052e/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png';
 
 const defaultTicket = {
-  description: 'לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.',
-  site: 'מקמ"ר',
+  description: 'אני לא מצליח להיכנס לנשר',
+  site: 'קריה',
   network: 'ק"ב',
   author: {
     phoneNumber: '052-7979226'
   },
   troubleshooters: {
-    lead: {name: 'נועה ויס', image},
+    lead: {name: 'איתי יעקובסון', image},
     teams: [
       {
         id: 1,
-        name: 'סיסטם'
+        name: 'משוב'
       },
       {
         id: 2,
+        name: 'נשר'
+      },
+      {
+        id: 3,
         name: 'secops'
+      },
+      {
+        id: 4,
+        name: 'סיסטם'
       }
     ]
   },
