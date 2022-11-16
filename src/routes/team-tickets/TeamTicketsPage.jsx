@@ -1,5 +1,7 @@
 import TicketsList from "./TicketsList";
 import TicketsTabs from "./TicketsTabs";
+import SearchBar from "./SearchBar";
+import { Box } from "@mui/system";
 import { useState } from "react";
 
 const ticketList = [
@@ -59,16 +61,28 @@ const filterStates = [
 
 export const TeamTicketsPage = () => {
   const [currentStateIndex, setCurrentStateIndex] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+
   const currentState = filterStates[currentStateIndex];
+
+  const filterdList = !searchValue
+    ? ticketList
+    : ticketList.filter(
+        ({ title, subtitle }) =>
+          title.includes(searchValue) || subtitle.includes(searchValue)
+      );
 
   return (
     <div>
+      <Box sx={{ margin: "1.5rem" }}>
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+      </Box>
       <TicketsTabs
         tabs={filterStates}
         currentStateIndex={currentStateIndex}
         setCurrentStateIndex={setCurrentStateIndex}
       />
-      <TicketsList ticketList={currentState.filterFunction(ticketList)} />
+      <TicketsList ticketList={currentState.filterFunction(filterdList)} />
     </div>
   );
 };
