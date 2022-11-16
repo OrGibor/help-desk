@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-	"start": "node help-desk.js"
+    "start": "vite"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
