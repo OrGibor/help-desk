@@ -1,7 +1,7 @@
 import TicketsList from "./TicketsList";
 import TicketsTabs from "./TicketsTabs";
 import SearchBar from "./SearchBar";
-import { Box } from "@mui/system";
+import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 
 const ticketList = [
@@ -74,6 +74,9 @@ export const TeamTicketsPage = () => {
 
   return (
     <div>
+      <Typography variant="h4" component="div" sx={{ margin: "1rem" }}></Typography>
+        הפניות של צוות משוב
+      </Typography>
       <Box sx={{ margin: "1.5rem" }}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
       </Box>
