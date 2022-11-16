@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
+<<<<<<< HEAD
 	"start": "node help-desk.js"
+=======
+    "start": "node index.js"
+>>>>>>> a954530605c7ba3d0ae5b45fb261e6dd0e90ccaf
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
