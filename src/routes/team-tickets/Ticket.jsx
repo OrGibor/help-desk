@@ -5,7 +5,7 @@ import TicketStatus from "./TicketStatus";
 import SelectTroubleshooter from "./SelectTroubleshooter";
 import TicketRating from "./TicketRating";
 
-export default function Ticket({ title, status, dateTime, subtitle, urgency }) {
+const Ticket = ({ title, status, dateTime, subtitle, urgency }) => {
   const [troubleshooter, setTroubleshooter] = useState(1);
 
   return (
@@ -22,7 +22,7 @@ export default function Ticket({ title, status, dateTime, subtitle, urgency }) {
       >
         <Grid item xs={8}>
           <Box display="flex" flexDirection="row">
-            <Typography variant="h5" component="div">
+            <Typography variant="h6" component="div">
               {title}
             </Typography>
             <TicketStatus statusId={status} />
@@ -32,7 +32,7 @@ export default function Ticket({ title, status, dateTime, subtitle, urgency }) {
           <Typography
             component="span"
             sx={{
-              fontSize: 20,
+              fontSize: 16,
               fontWeight: 540,
             }}
           >
@@ -65,4 +65,6 @@ export default function Ticket({ title, status, dateTime, subtitle, urgency }) {
       </CardActions>
     </Card>
   );
-}
+};
+
+export default Ticket;
