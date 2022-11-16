@@ -8,7 +8,7 @@ const availableTroubleshooters = [
 
 export default function SelectTroubleshooter(props) {
   return (
-    <FormControl fullWidth>
+    <FormControl>
       <InputLabel>מטפל</InputLabel>
       <Select
         sx={{ width: "10rem", hight: "3rem" }}
